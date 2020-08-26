@@ -103,7 +103,11 @@ cli
     }
   });
 
-  const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
+  const browser = await puppeteer.launch({
+    executablePath: process.env.CHROMIUM_PATH || null,
+    args: ['--no-sandbox', '--headless', '--disable-gpu']
+  });
+  
   const page = await browser.newPage();
 
   // Get URL / file path from first argument
