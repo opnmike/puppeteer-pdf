@@ -105,7 +105,7 @@ cli
 
   const browser = await puppeteer.launch({
     executablePath: process.env.CHROMIUM_PATH || null,
-    args: ['--no-sandbox', '--headless', '--disable-gpu']
+    args: ['--no-sandbox']
   });
   
   const page = await browser.newPage();
